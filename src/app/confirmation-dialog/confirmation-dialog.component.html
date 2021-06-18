@@ -1,0 +1,29 @@
+<div class="container-wrapper">
+    <div mat-dialog-title fxLayout="row" fxLayoutAlign="start center">
+        <img src="assets/imgs/ic-father.png" alt>
+        <h1>{{title}}</h1>
+    </div>
+    <hr>
+    <div mat-dialog-content class="container-content">
+        <p>{{message}}</p>
+        <p>{{description}}</p>
+        <p>{{descriptionDetail}}</p>
+    </div>
+
+    <hr>
+
+    <div mat-dialog-content class="container-btn">
+        <div fxLayout="row" fxLayoutAlign="end center" class="container-btn">
+
+            <button [disabled]="btnLeftDisable" (click)="onDismiss()" class="btn-cancel">
+                {{txtBtnLeft}}
+            </button>
+
+            <button [disabled]="btnRightDisable" (click)="onConfirm()" class="btn-ok">
+                {{txtBtnRight}}
+            </button>
+
+        </div>
+    </div>
+
+</div>

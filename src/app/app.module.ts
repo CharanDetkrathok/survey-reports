@@ -10,11 +10,16 @@ import { MaterialsModule } from './materials/materials/materials.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
+import { CookieService } from 'ngx-cookie-service';
+import { AdminComponent } from './admin/admin.component';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,7 @@ import { MatMenuModule } from '@angular/material/menu';
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

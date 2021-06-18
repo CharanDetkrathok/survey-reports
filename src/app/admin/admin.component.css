@@ -1,0 +1,443 @@
+.bg {
+    background-color: rgb(221, 226, 236);
+    height: auto;
+    width: 100%;
+    padding-bottom: 5rem;
+}
+
+hr {
+    color: rgb(165, 165, 165);
+    height: 0.5px;
+}
+
+nav {
+    top: 0;
+    background-color: rgb(9, 24, 109);
+    height: 4rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.branding {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.branding img {
+    padding: 0.4rem;
+    margin-left: 1rem;
+}
+
+.branding h1 {
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-family: 'Sriracha', cursive !important;
+    font-size: 2rem;
+}
+
+.add-user-wrapper,
+.user-lists-wrapper {
+    margin-top: 1.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-user-container,
+.user-lists-container {
+    width: 750px;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.add-user-wrapper h1 {
+    justify-content: flex-start;
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 1.8rem 0;
+}
+
+.add-user {
+    height: 100%;
+    margin: 1.8rem;
+}
+
+form {
+    display: block;
+    align-items: center;
+    font-weight: 400;
+}
+
+.ru-email,
+.department {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.department {
+    margin-top: 1rem;
+}
+
+.select-department-code {
+    font-weight: 200;
+    width: 60%;
+    border: none;
+    border-radius: 3.125rem;
+    padding: 0.5rem 1.5rem;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.ru-email .label-ru-email,
+.department .label-department {
+    height: 100%;
+    width: 12%;
+}
+
+.input-ru-email {
+    font-weight: 200;
+    width: 60%;
+    border: none;
+    border-radius: 3.125rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.input-ru-email:hover,
+.select-department-code:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 24px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+}
+
+.input-ru-email:focus,
+.select-department-code:focus {
+    outline: none;
+}
+
+.admin {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.label-admin {
+    margin-left: 0.2rem;
+}
+
+.label-faculty-close {
+    visibility: hidden;
+    height: 100%;
+    width: 12%;
+}
+
+.label-faculty {
+    height: 100%;
+    width: 12%;
+}
+
+.faculty-code-close {
+    visibility: hidden;
+    width: 60%;
+}
+
+.faculty-code {
+    width: 60%;
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    font-weight: 200;
+    border-radius: 3.125rem;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.faculty-code:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 24px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+}
+
+.faculty-code:focus {
+    outline: none;
+}
+
+.faculty-code option {
+    font-weight: 200;
+    margin-left: 0.5rem;
+    background-color: #fff;
+    padding: 0.3rem 1rem;
+    outline: none;
+}
+
+.article-btn-submit {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-submition {
+    width: 25%;
+}
+
+.btn-submit-save {
+    width: 100%;
+    border: 1px solid rgb(63, 89, 241);
+    background-color: #fff;
+    color: rgb(63, 89, 241);
+    border-radius: 3.125rem;
+    -webkit-border-radius: 3.125rem;
+    -moz-border-radius: 3.125rem;
+    -ms-border-radius: 3.125rem;
+    -o-border-radius: 3.125rem;
+    font-size: 1.2rem;
+    padding: 0.8rem 1rem;
+}
+
+.btn-submit-save:hover {
+    background-color: rgb(63, 89, 241);
+    color: #fff;
+    box-shadow: rgba(53, 53, 53, 0.2) 0px 2px 8px 0px;
+}
+
+.user-lists-container h1 {
+    justify-content: flex-start;
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 1.8rem 0;
+}
+
+.user-lists {
+    width: 100%;
+}
+
+table tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+table tr th {
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 1.6rem 1.4rem;
+    background-color: rgb(199, 205, 218);
+    color: #000;
+    outline: none;
+}
+
+table tr th:first-child {
+    background-color: rgb(199, 205, 218);
+    border-radius: 50px 0 0 50px;
+    -webkit-border-radius: 50px 0 0 50px;
+    -moz-border-radius: 50px 0 0 50px;
+    -ms-border-radius: 50px 0 0 50px;
+    -o-border-radius: 50px 0 0 50px;
+}
+
+table tr th:last-child {
+    background-color: rgb(199, 205, 218);
+    border-radius: 0 3.125rem 3.125rem 0;
+    -webkit-border-radius: 0 50px 50px 0;
+    -moz-border-radius: 0 50px 50px 0;
+    -ms-border-radius: 0 50px 50px 0;
+    -o-border-radius: 0 50px 50px 0;
+}
+
+table tr th:nth-child(3) {
+    text-align: center;
+}
+
+table tr th:nth-child(4) {
+    text-align: center;
+}
+
+table tr td {
+    padding: 1rem 1rem;
+}
+
+table tr td:first-child {
+    border-radius: 3.125rem 0 0 3.125rem;
+    -webkit-border-radius: 3.125rem 0 0 3.125rem;
+    -moz-border-radius: 3.125rem 0 0 3.125rem;
+    -ms-border-radius: 3.125rem 0 0 3.125rem;
+    -o-border-radius: 3.125rem 0 0 3.125rem;
+}
+
+table tr td:last-child {
+    border-radius: 0 3.125rem 3.125rem 0;
+    -webkit-border-radius: 0 50px 50px 0;
+    -moz-border-radius: 0 50px 50px 0;
+    -ms-border-radius: 0 50px 50px 0;
+    -o-border-radius: 0 50px 50px 0;
+}
+
+table tr input {
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 1.1rem;
+    font-weight: 200;
+    cursor: default;
+}
+
+button {
+    border: none;
+    width: 100%;
+    border-radius: 3.125rem;
+    -webkit-border-radius: 3.125rem;
+    -moz-border-radius: 3.125rem;
+    -ms-border-radius: 3.125rem;
+    -o-border-radius: 3.125rem;
+    padding: 0.5rem 1.3rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+button img {
+    width: 1rem;
+}
+
+button.edit {
+    border: 2px solid rgb(255, 187, 0);
+}
+
+button.delete {
+    border: 2px solid rgb(255, 17, 0);
+}
+
+table tr:hover button.edit {
+    background-color: rgb(255, 255, 255, 0);
+}
+
+table tr:hover button.edit:hover {
+    background-color: rgb(255, 187, 0);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+}
+
+table tr:hover button.edit:focus {
+    outline: none;
+}
+
+table tr:hover button.delete {
+    background-color: rgb(255, 255, 255, 0);
+}
+
+table tr:hover button.delete:hover {
+    background-color: rgb(255, 17, 0);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+}
+
+table tr:hover button.delete:focus {
+    outline: none;
+}
+
+
+/* เมื่อ click ที่ปุ่มแก้ไข จะทำการเพิ่ม className ด้วย javascript  */
+
+.faculty-code-edit,
+.department-edit {
+    width: 100%;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0);
+    margin-top: 0.1rem;
+    padding: 0.3rem 1rem;
+    border: 1px solid rgb(63, 89, 241);
+    font-weight: 200;
+    border-radius: 3.125rem;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    outline: none;
+}
+
+.faculty-code-edit:hover,
+.department-edit:hover {
+    box-shadow: rgba(255, 166, 0, 0.068) 0px 6px 24px 0px, rgba(241, 177, 0, 0.1) 0px 0px 0px 1px;
+}
+
+.faculty-code-edit option,
+.department-edit option {
+    font-weight: 200;
+    margin-left: 0.5rem;
+    background-color: #fff;
+    padding: 0.3rem 1rem;
+    outline: none;
+}
+
+table tr input.editUserOpen {
+    border: 1px solid rgb(63, 89, 241);
+    border-radius: 3.125rem;
+    padding: 0.5rem 0 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: auto;
+    font-size: 1rem;
+}
+
+button.edit-save {
+    border: 2px solid #29AB87;
+    margin-bottom: 0.5rem;
+}
+
+table tr:hover button.edit-save {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+table tr:hover button.edit-save:hover {
+    background-color: #29AB87;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+}
+
+table tr:hover button.edit-save:focus {
+    outline: none;
+}
+
+button.edit-refresh {
+    border: 2px solid rgb(255, 187, 0);
+}
+
+button.edit-refresh img {
+    width: 0.8rem;
+}
+
+table tr:hover button.edit-refresh {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+table tr:hover button.edit-refresh:hover {
+    background-color: rgb(255, 187, 0);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+}
+
+table tr:hover button.edit-refresh:focus {
+    outline: none;
+}
+
+
+/* จบ -> เมื่อ click ที่ปุ่มแก้ไข จะทำการเพิ่ม className ด้วย javascript  */
+
+.btn-submit-save:disabled {
+    border: 1px solid rgb(199, 205, 218);
+    color: rgb(199, 205, 218);
+    cursor: auto;
+}
+
+.btn-submit-save:disabled:hover {
+    background-color: #fff;
+    box-shadow: none;
+}

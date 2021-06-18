@@ -1,0 +1,137 @@
+<div class="bg">
+    <nav class="nav-bar">
+        <div class="branding">
+            <img src="assets/imgs/ic-father.png" alt>
+            <h1>Survey Report</h1>
+        </div>
+    </nav>
+
+    <div class="add-user-wrapper">
+        <div class="add-user-container">
+            <h1>เพิ่มผู้ใช้งาน</h1>
+            <hr>
+            <section class="add-user">
+                <form [formGroup]="addUserFormGroup" (ngSubmit)="onAddUserSubmit()">
+
+                    <article class="article-ru-email">
+                        <div class="ru-email">
+                            <label class="label-ru-email">RU-Mail</label>
+                            <input type="email" id="inputRuMail" class="input-ru-email" name="__addUserRuMail" placeholder="Enter RU-mail" (keyup)="onKeyUpInputTagAddRuMail($event)" formControlName="__addUserRuMail">
+                        </div>
+                    </article>
+
+                    <article class="article-department">
+                        <div class="department">
+                            <label class="label-department">แผนก</label>
+                            <select (change)="onChangedAddDepartment($event)" class="select-department-code" formControlName="__addUserDepartment" name="__addUserDepartment">
+                                <option value>--- กรุณาเลือก แผนก ---</option>
+                                <option value="1">กองแผน</option>
+                                <option value="2">คณะ</option>
+                            </select>
+                        </div>
+                    </article>
+
+                    <article>
+                        <div class="department">
+                            <label id="labelFaculty" class="label-faculty-close">คณะ</label>
+                            <select name="facultyCode" id="addFacultyCode" class="faculty-code-close" name="__addUserFaculty_no" formControlName="__addUserFaculty_no">
+                            <option value>--- กรุณาเลือก คณะ ---</option>
+                            <option
+                                *ngFor="let _faculty of __setFacultyData"
+                                value="{{_faculty.FACULTY_FACULTY_NO}}"
+                            >
+                                {{_faculty.FACULTY_FACULTY_NAME_THAI}}
+                            </option>
+
+                        </select>
+                        </div>
+                    </article>
+
+                    <article class="article-btn-submit">
+                        <div class="btn-submition">
+                            <button class="btn-submit-save" type="submit" [disabled]="!addUserFormGroup.valid">
+                                บันทึก
+                            </button>
+                        </div>
+                    </article>
+                </form>
+            </section>
+
+        </div>
+    </div>
+
+    <div class="user-lists-wrapper">
+        <div class="user-lists-container">
+            <h1>รายชื่อผู้ใช้งาน</h1>
+            <hr>
+            <table class="user-lists">
+                <tbody>
+                    <tr>
+                        <th>RU-mail</th>
+                        <th>ผู้ใช้งาน</th>
+                        <th>แก้ไข</th>
+                        <th>ลบ</th>
+                    </tr>
+                    <tr id="user-item" *ngFor="let user of __setUserDataHasFacultyName">
+                        <td>
+                            <input type="text" value="{{user.USER_USERNAME}}" readonly (keyup)="onKeyUpInputTagAddRuMail($event)">
+                        </td>
+                        <td>
+
+                            <input class="input-faculty-display" type="email" value="{{user.USER_FACULTY_NAME}}" readonly *ngIf="user.USER_ROLE_TYPE == '2'">
+
+                            <input class="input-kong-pan-display" type="text" value="กองแผน" readonly *ngIf="user.USER_ROLE_TYPE == 1">
+
+                            <select class="department-edit" hidden="true" (change)="onChangedDepartment($event)">
+                                <option value="1">กองแผน</option>
+                                <option value="2">คณะ</option>
+                            </select>
+
+                            <select class="faculty-code-edit" hidden="true">
+                                <option value>--- กรุณาเลือก คณะ ---</option>
+                                <option
+                                    *ngFor="let __faculty of __setFacultyData"
+                                    value="{{__faculty.FACULTY_FACULTY_NO}}"
+                                >
+                                    {{__faculty.FACULTY_FACULTY_NAME_THAI}}
+                                </option>
+                            </select>
+
+                        </td>
+                        <td id="user-item-btn-edit">
+                            <button class="edit" (click)="onEditUserItem($event,user.USER_ROLE_TYPE)">
+                                <img
+                                    src="assets/imgs/edit.png"
+                                    alt="edit"
+                                    style="width: 1rem;"
+                                >
+                            </button>
+                            <button class="edit-save" hidden="true">
+                                <img
+                                    src="assets/imgs/save.png"
+                                    alt="edit"
+                                >
+                            </button>
+                            <button class="edit-refresh" hidden="true" (click)="onEditUserItemRefresh($event,user.USER_ROLE_TYPE)">
+                                <img
+                                    src="assets/imgs/refresh.png"
+                                    alt="edit"
+                                >
+                            </button>
+                        </td>
+                        <td id="user-item-btn-delete">
+                            <button class="delete" (click)="onDeleteUserItem()">
+                                <img
+                                    src="assets/imgs/trash.png"
+                                    alt="delete"
+                                    style="width: 1rem;"
+                                >
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
