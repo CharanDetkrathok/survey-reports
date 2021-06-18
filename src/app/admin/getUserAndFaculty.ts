@@ -26,3 +26,12 @@ export interface setFacultyData {
 }
 
 
+export interface responeAfterInsert {
+  error_message_status:                number;
+  check_duplicate:                     number;
+  error_message_from_user:             string;
+  error_message_duplicate_from_system: string;
+  error_message_insert_from_system:    string;
+}
+
+

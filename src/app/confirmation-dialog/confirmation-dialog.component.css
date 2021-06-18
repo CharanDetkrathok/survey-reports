@@ -48,6 +48,17 @@ p {
     color: rgb(255, 255, 255);
 }
 
+.btn-ok:disabled {
+    border: 1px solid rgb(255, 255, 255, 0);
+    color: rgb(255, 255, 255, 0);
+    cursor: auto;
+}
+
+.btn-ok:disabled:hover {
+    background-color: #fff;
+    box-shadow: none;
+}
+
 .btn-cancel {
     margin: 0 0.5rem;
     padding: 0.6rem 1.5rem;
@@ -65,6 +76,17 @@ p {
 .btn-cancel:hover {
     background-color: rgb(255, 187, 0);
     color: rgb(255, 255, 255);
+}
+
+.btn-cancel:disabled {
+    border: 1px solid rgb(255, 255, 255, 0);
+    color: rgb(255, 255, 255, 0);
+    cursor: auto;
+}
+
+.btn-cancel:disabled:hover {
+    background-color: #fff;
+    box-shadow: none;
 }
 
 img {

@@ -117,6 +117,7 @@ export class AdminComponent implements OnInit {
     if (tempRuMailAutocomplete.substring(tempRuMailAutocomplete.length, tempRuMailAutocomplete.length - 2) == '@r') {
 
       event.target.value += `u.ac.th`;
+      this.addUserFormGroup.controls['__addUserRuMail'].setValue(event.target.value);
 
     }
 
@@ -263,7 +264,6 @@ export class AdminComponent implements OnInit {
 
     let deleteUserItem = document.querySelector('#user-item-btn-delete');
 
-    console.log(deleteUserItem.parentElement);
   }
 
 
@@ -320,12 +320,10 @@ export class AdminComponent implements OnInit {
 
   onAddUserSubmit() {
 
-    console.log(this.addUserFormGroup);
-
     //-- ********** สำเร็จ แจ้งด้วย Dialog ******** --//
 
     const title = 'ยืนยันบันทึกผู้ใช้งาน';
-    const message = 'ทำการบันทึกผู้ใช้งานเรียบร้อย';
+    const message = 'ท่านต้องการ บันทึกผู้ใช้งานหรือไม่';
     const description = '';
     const descriptionDetail = '';
     const btnLeftDisable = false;
@@ -343,10 +341,69 @@ export class AdminComponent implements OnInit {
       this.dialog_confirm_result = dialogResult;
       if (this.dialog_confirm_result) {
 
-        console.log('ok')
+        let username = this.addUserFormGroup.controls['__addUserRuMail'].value;
+        let role_type = this.addUserFormGroup.controls['__addUserDepartment'].value;
+        let faculty_no = this.addUserFormGroup.controls['__addUserFaculty_no'].value;
 
-        this.__setUserDataHasFacultyName = [];
-        this.callApiUserAndFaculty();
+        this.userAndFaculty.postHttpAddUser(username, role_type, faculty_no).subscribe(res => {
+
+          if (res.error_message_status == 1) {
+
+            const title = 'เพิ่มผู้ใช้งาน';
+            const message = 'ไม่สามารถเพิ่มผู้ใช้งานนี้ได้';
+            const description = `เนื่องจาก ${username} นี้มีอยู่ในระบบแล้ว`;
+            const descriptionDetail = '';
+            const btnLeftDisable = true;
+            const btnRightDisable = false;
+            const txtBtnLeft = '';
+            const txtBtnRight = 'OK';
+
+            const dialogData = new ConfirmDialogModel(title, message, description, descriptionDetail, btnLeftDisable, btnRightDisable, txtBtnLeft, txtBtnRight);
+            const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+              data: dialogData
+            });
+
+            dialogRef.afterClosed().subscribe(dialogResult => {
+
+              this.dialog_confirm_result = dialogResult;
+              if (this.dialog_confirm_result) {
+
+              }
+
+            });
+
+          } else if (res.error_message_status == 2) {
+
+            const title = 'เพิ่มผู้ใช้งาน';
+            const message = `เพิ่มผู้ใช้งานเรียบร้อย ${username}`;
+            const description = ``;
+            const descriptionDetail = '';
+            const btnLeftDisable = true;
+            const btnRightDisable = false;
+            const txtBtnLeft = '';
+            const txtBtnRight = 'OK';
+
+            const dialogData = new ConfirmDialogModel(title, message, description, descriptionDetail, btnLeftDisable, btnRightDisable, txtBtnLeft, txtBtnRight);
+            const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+              data: dialogData
+            });
+
+            dialogRef.afterClosed().subscribe(dialogResult => {
+
+              this.dialog_confirm_result = dialogResult;
+              if (this.dialog_confirm_result) {
+
+              }
+
+            });
+
+            this.__setUserDataHasFacultyName = [];
+            this.callApiUserAndFaculty();
+
+          }
+
+
+        });
 
       }
 
