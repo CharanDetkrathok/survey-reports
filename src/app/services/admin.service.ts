@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 import { environment } from "src/environments/environment.prod";
-import { getUserAndFaculty, responeAfterInsert } from "../admin/getUserAndFaculty";
+import { getUserAndFaculty, responeAfterDelete, responeAfterInsert } from "../admin/getUserAndFaculty";
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +31,20 @@ export class adminService {
     const body = urlSearchParams.toString();
 
     return this.httpUrl.post<responeAfterInsert>(`${environment._base_url}admin-add-user.jsp`, body, { headers: headers });
+
+  }
+
+
+  postHttpDeleteUser(USER_ID) {
+
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8' });
+
+    let urlSearchParams = new URLSearchParams();
+    urlSearchParams.append('USER_ID', USER_ID);
+    
+    const body = urlSearchParams.toString();
+
+    return this.httpUrl.post<responeAfterDelete>(`${environment._base_url}admin-delete-user.jsp`, body, { headers: headers });
 
   }
 

@@ -34,4 +34,10 @@ export interface responeAfterInsert {
   error_message_insert_from_system:    string;
 }
 
+export interface responeAfterDelete {
+  error_message_status:             number;
+  error_message_from_user:          string;
+  error_message_delete_from_system: string;
+}
+
 

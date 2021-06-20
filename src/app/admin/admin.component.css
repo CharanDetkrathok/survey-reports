@@ -127,6 +127,18 @@ form {
     outline: none;
 }
 
+.input-ru-email-correct {
+    border: 1px solid #29AB87 !important;
+}
+
+.input-ru-email-warning {
+    border: 1px solid rgb(255, 187, 0) !important;
+}
+
+.input-ru-email-wrong {
+    border: 1px solid rgb(255, 17, 0) !important;
+}
+
 .admin {
     display: flex;
     flex-direction: row;
@@ -426,6 +438,21 @@ table tr:hover button.edit-refresh:hover {
 
 table tr:hover button.edit-refresh:focus {
     outline: none;
+}
+
+button.edit-refresh:disabled,
+button.edit-refresh:disabled:hover,
+button.edit-save:disabled,
+button.edit-save:disabled:hover,
+table tr:hover button.edit-refresh:disabled,
+table tr:hover button.edit-refresh:disabled:hover,
+table tr:hover button.edit-save:disabled,
+table tr:hover button.edit-save:disabled:hover {
+    border: 2px solid rgb(199, 205, 218);
+    color: rgb(199, 205, 218);
+    background-color: rgba(255, 255, 255, 0);
+    cursor: auto;
+    box-shadow: none;
 }
 
 

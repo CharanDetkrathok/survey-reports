@@ -16,7 +16,7 @@
                     <article class="article-ru-email">
                         <div class="ru-email">
                             <label class="label-ru-email">RU-Mail</label>
-                            <input type="email" id="inputRuMail" class="input-ru-email" name="__addUserRuMail" placeholder="Enter RU-mail" (keyup)="onKeyUpInputTagAddRuMail($event)" formControlName="__addUserRuMail">
+                            <input type="email" id="inputRuMail" class="input-ru-email" name="__addUserRuMail" placeholder="Enter your@ru.ac.th" (keyup)="onKeyUpInputTagAddRuMail($event)" formControlName="__addUserRuMail">
                         </div>
                     </article>
 
@@ -34,7 +34,7 @@
                     <article>
                         <div class="department">
                             <label id="labelFaculty" class="label-faculty-close">คณะ</label>
-                            <select name="facultyCode" id="addFacultyCode" class="faculty-code-close" name="__addUserFaculty_no" formControlName="__addUserFaculty_no">
+                            <select (change)="onChangedAddFaculty($event)" name="facultyCode" id="addFacultyCode" class="faculty-code-close" name="__addUserFaculty_no" formControlName="__addUserFaculty_no">
                             <option value>--- กรุณาเลือก คณะ ---</option>
                             <option
                                 *ngFor="let _faculty of __setFacultyData"
@@ -74,7 +74,8 @@
                     </tr>
                     <tr id="user-item" *ngFor="let user of __setUserDataHasFacultyName">
                         <td>
-                            <input type="text" value="{{user.USER_USERNAME}}" readonly (keyup)="onKeyUpInputTagAddRuMail($event)">
+                            <span id="inputUserID" hidden="true">{{user.USER_ID}}</span>
+                            <input class="input-user-name" type="text" value="{{user.USER_USERNAME}}" readonly (keyup)="onKeyUpInputTagEditRuMail($event)" placeholder="Enter your@ru.ac.th">
                         </td>
                         <td>
 
@@ -99,20 +100,20 @@
 
                         </td>
                         <td id="user-item-btn-edit">
-                            <button class="edit" (click)="onEditUserItem($event,user.USER_ROLE_TYPE)">
+                            <button class="edit" (click)="onEditUserItem($event,user.USER_ID,user.USER_USERNAME,user.USER_FACULTY_NO,user.USER_ROLE_TYPE)">
                                 <img
                                     src="assets/imgs/edit.png"
                                     alt="edit"
                                     style="width: 1rem;"
                                 >
                             </button>
-                            <button class="edit-save" hidden="true">
+                            <button class="edit-save" hidden="true" (click)="onSaveEditUser($event,user.USER_ID,user.USER_USERNAME,user.USER_FACULTY_NO,user.USER_ROLE_TYPE)">
                                 <img
                                     src="assets/imgs/save.png"
                                     alt="edit"
                                 >
                             </button>
-                            <button class="edit-refresh" hidden="true" (click)="onEditUserItemRefresh($event,user.USER_ROLE_TYPE)">
+                            <button class="edit-refresh" hidden="true" (click)="onEditUserItemRefresh($event,user.USER_ID,user.USER_USERNAME,user.USER_FACULTY_NO,user.USER_ROLE_TYPE)">
                                 <img
                                     src="assets/imgs/refresh.png"
                                     alt="edit"
@@ -120,7 +121,7 @@
                             </button>
                         </td>
                         <td id="user-item-btn-delete">
-                            <button class="delete" (click)="onDeleteUserItem()">
+                            <button class="delete" (click)="onDeleteUserItem($event,user.USER_ID,user.USER_USERNAME)">
                                 <img
                                     src="assets/imgs/trash.png"
                                     alt="delete"
