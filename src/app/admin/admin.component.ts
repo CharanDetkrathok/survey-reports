@@ -127,7 +127,7 @@ export class AdminComponent implements OnInit {
 
       inputTagRUmail.classList.remove('input-ru-email-correct');
       inputTagRUmail.classList.add('input-ru-email-wrong');
-      event.target.closest('form').querySelector('select.select-department-code').classList.add('input-ru-email-warning');
+      // event.target.closest('form').querySelector('select.select-department-code').classList.add('input-ru-email-warning');
 
     } else {
 
@@ -162,7 +162,7 @@ export class AdminComponent implements OnInit {
       inputTagRUmail.classList.add('input-ru-email-wrong');
 
       editSaveBtn.disabled = true;
-      editRefreshBtn.disabled = true;
+      // editRefreshBtn.disabled = true;
 
 
     } else {
@@ -171,7 +171,7 @@ export class AdminComponent implements OnInit {
       inputTagRUmail.classList.remove('input-ru-email-wrong');
 
       editSaveBtn.disabled = false;
-      editRefreshBtn.disabled = false;
+      // editRefreshBtn.disabled = false;
 
     }
 
@@ -197,12 +197,16 @@ export class AdminComponent implements OnInit {
       inputTagRUmail.readOnly = false;
       inputTagKongPan.hidden = true;
 
-      selectTagDepartments.classList.add('editUserOpen')
+      selectTagDepartments.classList.add('editUserOpen');
       selectTagDepartments.hidden = false;
 
       editBtn.hidden = true;
       editSaveBtn.hidden = false;
       editRefreshBtn.hidden = false;
+
+      inputTagRUmail.value = userUsername;
+      inputTagKongPan.value = `กองแผน`;
+      selectTagDepartments.value = userRoleType;
 
     } else {
 
@@ -218,7 +222,7 @@ export class AdminComponent implements OnInit {
       let editSaveBtn = editUserItem.querySelector('button.edit-save');
       let editRefreshBtn = editUserItem.querySelector('button.edit-refresh');
 
-      selectTagDepartments.classList.add('editUserOpen')
+      selectTagDepartments.classList.add('editUserOpen');
       selectTagDepartments.value = 2;
       selectTagDepartments.hidden = false;
 
@@ -229,6 +233,10 @@ export class AdminComponent implements OnInit {
       editBtn.hidden = true;
       editSaveBtn.hidden = false;
       editRefreshBtn.hidden = false;
+
+      inputTagRUmail.value = userUsername;
+      selectTagFaculty.value = userFacultyNo;
+      selectTagDepartments.value = userRoleType;
 
     }
 
@@ -247,6 +255,8 @@ export class AdminComponent implements OnInit {
 
   onEditUserItemRefresh(event, userId, userUsername, userFacultyNo, userRoleType) {
 
+    console.log(event);
+
     if (userRoleType == 1) {
 
       let editUserItem = event.target.closest('tr');
@@ -259,26 +269,31 @@ export class AdminComponent implements OnInit {
       let editSaveBtn = editUserItem.querySelector('button.edit-save');
       let editRefreshBtn = editUserItem.querySelector('button.edit-refresh');
 
-      if (inputTagRUmail.value !== '') {
 
-        inputTagRUmail.classList.remove('editUserOpen');
-        selectTagDepartments.classList.remove('editUserOpen')
+      inputTagRUmail.classList.remove('input-ru-email-wrong');
+      inputTagRUmail.classList.remove('editUserOpen');
+      selectTagDepartments.classList.remove('editUserOpen');
 
-        inputTagRUmail.readOnly = true;
-        inputTagKongPan.hidden = false;
-        selectTagDepartments.hidden = true;
-        editBtn.hidden = false;
-        editSaveBtn.hidden = true;
-        editRefreshBtn.hidden = true;
+      inputTagRUmail.readOnly = true;
+      inputTagKongPan.hidden = false;
+      selectTagDepartments.hidden = true;
+      editBtn.hidden = false;
+      editSaveBtn.hidden = true;
+      editSaveBtn.disabled = false;
+      editRefreshBtn.hidden = true;
+      editRefreshBtn.disabled = false;
 
-        if (editUserItem.querySelector('select.faculty-code-edit').hidden === false) {
+      if (editUserItem.querySelector('select.faculty-code-edit').hidden === false) {
 
-          editUserItem.querySelector('select.faculty-code-edit').hidden = true;
-          editUserItem.querySelector('select.faculty-code-edit').remove('editUserOpen')
-
-        }
+        editUserItem.querySelector('select.faculty-code-edit').hidden = true;
+        editUserItem.querySelector('select.faculty-code-edit').remove('editUserOpen');
 
       }
+
+      inputTagRUmail.value = userUsername;
+      inputTagKongPan.value = `กองแผน`;
+      selectTagDepartments.value = userRoleType;
+
 
 
     } else {
@@ -295,46 +310,96 @@ export class AdminComponent implements OnInit {
       let editSaveBtn = editUserItem.querySelector('button.edit-save');
       let editRefreshBtn = editUserItem.querySelector('button.edit-refresh');
 
-      if (inputTagRUmail.value !== '') {
+      inputTagRUmail.classList.remove('input-ru-email-wrong');
+      inputTagRUmail.classList.remove('editUserOpen');
+      selectTagDepartments.classList.remove('editUserOpen');
 
-        inputTagRUmail.classList.remove('editUserOpen');
+      selectTagDepartments.value = '';
+      selectTagDepartments.hidden = true;
 
-        selectTagDepartments.classList.remove('editUserOpen')
-        selectTagDepartments.value = '';
-        selectTagDepartments.hidden = true;
+      inputTagRUmail.readOnly = true;
+      inputTagFaculty.hidden = false;
+      selectTagFaculty.hidden = true;
+      editBtn.hidden = false;
+      editSaveBtn.hidden = true;
+      editSaveBtn.disabled = false;
+      editRefreshBtn.hidden = true;
+      editRefreshBtn.disabled = false;
 
-        inputTagRUmail.readOnly = true;
-        inputTagFaculty.hidden = false;
-        selectTagFaculty.hidden = true;
-        editBtn.hidden = false;
-        editSaveBtn.hidden = true;
-        editRefreshBtn.hidden = true;
 
-      } else {
 
-        inputTagRUmail.placeholder = 'Enter your@ru.ac.th';
+      inputTagRUmail.placeholder = 'Enter your@ru.ac.th';
 
-      }
+
+      inputTagRUmail.value = userUsername;
+      selectTagFaculty.value = userFacultyNo;
+      selectTagDepartments.value = userRoleType;
 
     }
 
 
   }
 
-  onChangedDepartment(event) {
+  onChangedDepartment(event, userFacultyNo) {
 
     let selectTagDepartments = event.target;
-    let selectTagFaculty = event.target.parentElement.querySelector('select.faculty-code-edit');
+    let selectTagFaculty = event.target.closest('tr').querySelector('select#department-edit-faculty');
+
+    let editSaveBtn = event.target.closest('tr').querySelector('button.edit-save');
 
     if (event.target.value == 2) {
 
-      selectTagFaculty.classList.add('editUserOpen')
       selectTagFaculty.hidden = false;
+
+      if (userFacultyNo.toString() == '') {
+
+        selectTagFaculty.classList.add('editUserOpen-when-without-faculty-no');
+        selectTagFaculty.classList.remove('editUserOpen');
+        // selectTagFaculty.classList.remove('faculty-code-edit');
+
+        editSaveBtn.disabled = true;
+
+      } else {
+
+        selectTagFaculty.classList.remove('editUserOpen-when-without-faculty-no');
+        selectTagFaculty.classList.add('editUserOpen');
+
+        editSaveBtn.disabled = false;
+
+      }
+
+    } else {
+      
+      selectTagFaculty.classList.remove('editUserOpen-when-without-faculty-no');
+      selectTagFaculty.classList.remove('editUserOpen');
+
+      selectTagFaculty.hidden = true;
+      editSaveBtn.disabled = false;
+
+    }
+
+  }
+
+  onChangedDepartmentSelectedFaculty(event) {
+
+    let editSaveBtn = event.target.closest('tr').querySelector('button.edit-save');;
+    let selectTagFaculty = event.target;
+
+    if (event.target.value == '' || event.target.value == null) {
+
+      editSaveBtn.disabled = true;
+
+      selectTagFaculty.classList.add('editUserOpen-when-without-faculty-no');
+      // selectTagFaculty.classList.remove('faculty-code-edit');
+      selectTagFaculty.classList.remove('editUserOpen');
 
     } else {
 
-      selectTagFaculty.classList.remove('editUserOpen')
-      selectTagFaculty.hidden = true;
+      editSaveBtn.disabled = false;
+
+      selectTagFaculty.classList.remove('editUserOpen-when-without-faculty-no');
+      // selectTagFaculty.classList.add('faculty-code-edit');
+      selectTagFaculty.classList.add('editUserOpen');
 
     }
 
@@ -349,7 +414,7 @@ export class AdminComponent implements OnInit {
     if (event.target.value == 2) {
 
       event.target.closest('form').querySelector('select.select-department-code').classList.remove('input-ru-email-wrong');
-      event.target.closest('form').querySelector('select.select-department-code').classList.remove('input-ru-email-warning');
+      // event.target.closest('form').querySelector('select.select-department-code').classList.remove('input-ru-email-warning');
       event.target.closest('form').querySelector('select.select-department-code').classList.add('input-ru-email-correct');
 
       document.querySelector('select#addFacultyCode').classList.add('input-ru-email-wrong');
@@ -366,7 +431,7 @@ export class AdminComponent implements OnInit {
     } else if (event.target.value == 1) {
 
       event.target.closest('form').querySelector('select.select-department-code').classList.remove('input-ru-email-wrong');
-      event.target.closest('form').querySelector('select.select-department-code').classList.remove('input-ru-email-warning');
+      // event.target.closest('form').querySelector('select.select-department-code').classList.remove('input-ru-email-warning');
       event.target.closest('form').querySelector('select.select-department-code').classList.add('input-ru-email-correct');
 
       document.querySelector('select#addFacultyCode').classList.remove('input-ru-email-wrong');
@@ -384,7 +449,7 @@ export class AdminComponent implements OnInit {
     } else {
 
       event.target.closest('form').querySelector('select.select-department-code').classList.add('input-ru-email-wrong');
-      event.target.closest('form').querySelector('select.select-department-code').classList.remove('input-ru-email-warning');
+      // event.target.closest('form').querySelector('select.select-department-code').classList.remove('input-ru-email-warning');
       event.target.closest('form').querySelector('select.select-department-code').classList.remove('input-ru-email-correct');
 
       document.querySelector('select#addFacultyCode').classList.remove('input-ru-email-wrong');
@@ -426,10 +491,10 @@ export class AdminComponent implements OnInit {
 
   }
 
-  onSaveEditUser(event,userId,userName,userFacultyName,userRoleType) { /// ----- Save data editing --- /// 
+  onSaveEditUser(event, userId, userName, userFacultyName, userRoleType) { /// ----- Save data editing --- /// 
 
 
-    console.log(`${event}, id: ${userId}, email: ${userName}, faculty: ${userFacultyName}, role: ${userRoleType}`)
+    console.log(`${event}, id: ${userId}, email: ${userName}, faculty: ${userFacultyName}, role: ${userRoleType}`);
 
   }
 
@@ -458,10 +523,10 @@ export class AdminComponent implements OnInit {
 
         this.userAndFaculty.postHttpDeleteUser(userId).subscribe(res => {
 
-          console.log(res)
-          console.log(res.error_message_status)
-          console.log(res.error_message_from_user)
-          console.log(res.error_message_delete_from_system)
+          console.log(res);
+          console.log(res.error_message_status);
+          console.log(res.error_message_from_user);
+          console.log(res.error_message_delete_from_system);
 
           if (res.error_message_status == 1) {
 
@@ -483,11 +548,11 @@ export class AdminComponent implements OnInit {
 
               this.dialog_confirm_result = dialogResult;
               if (this.dialog_confirm_result) {
-                
-                
-                  // ลบสำเร็จ จัดเรียงข้อมูลที่จะแสดงใหม่
-                  this.__setUserDataHasFacultyName = [];
-                  this.callApiUserAndFaculty();
+
+
+                // ลบสำเร็จ จัดเรียงข้อมูลที่จะแสดงใหม่
+                this.__setUserDataHasFacultyName = [];
+                this.callApiUserAndFaculty();
 
 
               }
@@ -651,11 +716,11 @@ export class AdminComponent implements OnInit {
     });
 
     document.querySelector('select.select-department-code').classList.remove('input-ru-email-wrong');
-    document.querySelector('select.select-department-code').classList.remove('input-ru-email-warning');
+    // document.querySelector('select.select-department-code').classList.remove('input-ru-email-warning');
     document.querySelector('select.select-department-code').classList.remove('input-ru-email-correct');
 
     document.querySelector('.input-ru-email').classList.remove('input-ru-email-wrong');
-    document.querySelector('.input-ru-email').classList.remove('input-ru-email-warning');
+    // document.querySelector('.input-ru-email').classList.remove('input-ru-email-warning');
     document.querySelector('.input-ru-email').classList.remove('input-ru-email-correct');
 
   }/// ----- insert user ------ ///

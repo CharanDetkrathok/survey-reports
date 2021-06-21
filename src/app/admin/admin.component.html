@@ -83,12 +83,12 @@
 
                             <input class="input-kong-pan-display" type="text" value="กองแผน" readonly *ngIf="user.USER_ROLE_TYPE == 1">
 
-                            <select class="department-edit" hidden="true" (change)="onChangedDepartment($event)">
+                            <select class="department-edit" hidden="true" (change)="onChangedDepartment($event,user.USER_FACULTY_NO)">
                                 <option value="1">กองแผน</option>
                                 <option value="2">คณะ</option>
                             </select>
 
-                            <select class="faculty-code-edit" hidden="true">
+                            <select id="department-edit-faculty" class="faculty-code-edit" hidden="true" (change)="onChangedDepartmentSelectedFaculty($event)">
                                 <option value>--- กรุณาเลือก คณะ ---</option>
                                 <option
                                     *ngFor="let __faculty of __setFacultyData"
