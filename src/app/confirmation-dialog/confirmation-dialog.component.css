@@ -10,7 +10,6 @@ hr {
 h1 {
     padding: 0;
     margin: 0;
-    font-family: 'Sriracha', cursive !important;
     font-size: 1.5rem;
     font-weight: 800;
 }
@@ -32,14 +31,14 @@ p {
 
 .btn-ok {
     padding: 0.6rem 2.2rem;
-    border-radius: 3.125rem;
+    border-radius: 0.5rem;
     background-color: rgba(255, 255, 255, 0);
     border: 1px solid rgb(63, 89, 241);
     color: rgb(63, 89, 241);
-    -webkit-border-radius: 3.125rem;
-    -moz-border-radius: 3.125rem;
-    -ms-border-radius: 3.125rem;
-    -o-border-radius: 3.125rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
     box-shadow: rgba(255, 255, 255, 0) 0px 3px 8px;
 }
 
@@ -62,14 +61,14 @@ p {
 .btn-cancel {
     margin: 0 0.5rem;
     padding: 0.6rem 1.5rem;
-    border-radius: 3.125rem;
+    border-radius: 0.5rem;
     background-color: rgba(255, 255, 255, 0);
     border: 1px solid rgb(255, 187, 0);
     color: rgb(255, 187, 0);
-    -webkit-border-radius: 3.125rem;
-    -moz-border-radius: 3.125rem;
-    -ms-border-radius: 3.125rem;
-    -o-border-radius: 3.125rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
     box-shadow: rgba(255, 255, 255, 0) 0px 3px 8px;
 }
 

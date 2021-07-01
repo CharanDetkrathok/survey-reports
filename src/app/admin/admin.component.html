@@ -1,57 +1,130 @@
 <div class="bg">
-    <nav class="nav-bar">
-        <div class="branding">
-            <img src="assets/imgs/ic-father.png" alt>
-            <h1>Survey Report</h1>
+
+    <div class="nav-wrapper">
+        <nav class="nav-bar">
+            <div class="branding">
+                <img src="assets/imgs/logo-for-survey3.svg" alt>
+            </div>
+            <div class="list-items">
+                <ul>
+                    <li>
+                        <p>charan@ru.ac.th</p>
+                    </li>
+                    <li>
+                        <button>
+                            <span>Logout</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="welcom-management-wrapper">
+
+        <div class="welcom-management-content">
+            <img src="assets/imgs/user-setting.png">
+            <div class="welcom-management-content-h2">
+                <h2>ยินดีต้อนรับเข้าสู่</h2>
+                <h2>การจัดการผู้ใช่งาน</h2>
+                <p>วันเปิด-ปิด แบบสำรวจสำหรับนักศึกษา</p>
+                <p>
+                    เพิ่มข้อมูลผู้ใช้งาน แก้ไขข้อมูลผู้ใช้งาน และลบข้อมูลผู้ใช้งาน
+                </p>
+            </div>
         </div>
-    </nav>
+
+    </div>
+
+    <div class="open-close-wrapper">
+        <div class="open-close-content">
+            <h1>กำหนดวัน เปิด-ปิด ระบบ</h1>
+            <hr>
+            <div class="open-close-section">
+                <section class="open-close-img">
+                    <img src="assets/imgs/calendar.png" alt>
+                </section>
+                <section class="open-close-setting">
+                    <article class="article-open">
+                        <!-- <label>วันที่เปิดระบบ</label> -->
+                        <mat-form-field appearance="fill">
+                            <mat-label>วันที่เปิดระบบ</mat-label>
+                            <input matInput [matDatepicker]="picker">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </article>
+                    <article class="article-close">
+                        <!-- <label>วันที่ปิดระบบ</label> -->
+                        <mat-form-field appearance="fill">
+                            <mat-label>วันที่ปิดระบบ</mat-label>
+                            <input matInput [matDatepicker]="picker">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </article>
+                    <article class="article-open-close-btn">
+                        <div class="open-close-btn-submition">
+                            <button class="open-close-btn-submit-save">บันทึก</button>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
 
     <div class="add-user-wrapper">
         <div class="add-user-container">
             <h1>เพิ่มผู้ใช้งาน</h1>
             <hr>
             <section class="add-user">
+                <img src="assets/imgs/user-complete.png">
                 <form [formGroup]="addUserFormGroup" (ngSubmit)="onAddUserSubmit()">
 
                     <article class="article-ru-email">
                         <div class="ru-email">
                             <label class="label-ru-email">RU-Mail</label>
-                            <input type="email" id="inputRuMail" class="input-ru-email" name="__addUserRuMail" placeholder="Enter your@ru.ac.th" (keyup)="onKeyUpInputTagAddRuMail($event)" formControlName="__addUserRuMail">
+                            <input type="email" id="inputRuMail" class="input-ru-email" name="__addUserRuMail" placeholder="กรอก RU-Mail@ru.ac.th" (keyup)="onKeyUpInputTagAddRuMail($event)" formControlName="__addUserRuMail">
                         </div>
                     </article>
 
                     <article class="article-department">
                         <div class="department">
-                            <label class="label-department">แผนก</label>
+                            <label class="label-department">Department</label>
                             <select (change)="onChangedAddDepartment($event)" class="select-department-code" formControlName="__addUserDepartment" name="__addUserDepartment">
-                                <option value>--- กรุณาเลือก แผนก ---</option>
+                                <option value>กรุณาเลือก แผนก</option>
                                 <option value="1">กองแผน</option>
                                 <option value="2">คณะ</option>
                             </select>
                         </div>
                     </article>
 
-                    <article>
+                    <article class="article-department-faculty">
                         <div class="department">
-                            <label id="labelFaculty" class="label-faculty-close">คณะ</label>
+                            <label id="labelFaculty" class="label-faculty-close">
+                                Faculty
+                            </label>
                             <select (change)="onChangedAddFaculty($event)" name="facultyCode" id="addFacultyCode" class="faculty-code-close" name="__addUserFaculty_no" formControlName="__addUserFaculty_no">
-                            <option value>--- กรุณาเลือก คณะ ---</option>
-                            <option
-                                *ngFor="let _faculty of __setFacultyData"
-                                value="{{_faculty.FACULTY_FACULTY_NO}}"
-                            >
-                                {{_faculty.FACULTY_FACULTY_NAME_THAI}}
-                            </option>
+                                <option value>กรุณาเลือก คณะ</option>
+                                <option
+                                    *ngFor="let _faculty of __setFacultyData"
+                                    value="{{_faculty.FACULTY_FACULTY_NO}}"
+                                >
+                                    {{_faculty.FACULTY_FACULTY_NAME_THAI}}
+                                </option>
 
-                        </select>
+                            </select>
                         </div>
                     </article>
 
                     <article class="article-btn-submit">
                         <div class="btn-submition">
-                            <button class="btn-submit-save" type="submit" [disabled]="!addUserFormGroup.valid">
-                                บันทึก
-                            </button>
+                            <label class="label-btn">btn</label>
+                            <div class="btn-submit-content">
+                                <button class="btn-submit-save" type="submit" [disabled]="!addUserFormGroup.valid">
+                                    บันทึก
+                                </button>
+                            </div>
                         </div>
                     </article>
                 </form>
@@ -74,8 +147,10 @@
                     </tr>
                     <tr id="user-item" *ngFor="let user of __setUserDataHasFacultyName">
                         <td>
-                            <span id="inputUserID" hidden="true">{{user.USER_ID}}</span>
-                            <input class="input-user-name" type="text" value="{{user.USER_USERNAME}}" readonly (keyup)="onKeyUpInputTagEditRuMail($event)" placeholder="Enter your@ru.ac.th">
+                            <span id="inputUserID" hidden="true">
+                                {{user.USER_ID}}
+                            </span>
+                            <input class="input-user-name" type="text" value="{{user.USER_USERNAME}}" readonly (keyup)="onKeyUpInputTagEditRuMail($event)" placeholder="กรอก ru-mail@ru.ac.th">
                         </td>
                         <td>
 
@@ -135,4 +210,10 @@
         </div>
     </div>
 
+    <div class="footer">
+        <img src="assets/imgs/logo-for-survey3.svg" alt>
+        <p>
+            แบบสำรวจภาวะการมีงานทำของบัณฑิตระดับปริญญาตรี และระดับบัณฑิตศึกษา มหาวิทยาลัยรามคำแหง
+        </p>
+    </div>
 </div>

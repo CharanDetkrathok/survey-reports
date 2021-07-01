@@ -328,7 +328,7 @@ export class AdminComponent implements OnInit {
 
 
 
-      inputTagRUmail.placeholder = 'Enter your@ru.ac.th';
+      inputTagRUmail.placeholder = 'กรอก ru-mail@ru.ac.th';
 
 
       inputTagRUmail.value = userUsername;
@@ -390,7 +390,6 @@ export class AdminComponent implements OnInit {
       editSaveBtn.disabled = true;
 
       selectTagFaculty.classList.add('editUserOpen-when-without-faculty-no');
-      // selectTagFaculty.classList.remove('faculty-code-edit');
       selectTagFaculty.classList.remove('editUserOpen');
 
     } else {
@@ -398,7 +397,6 @@ export class AdminComponent implements OnInit {
       editSaveBtn.disabled = false;
 
       selectTagFaculty.classList.remove('editUserOpen-when-without-faculty-no');
-      // selectTagFaculty.classList.add('faculty-code-edit');
       selectTagFaculty.classList.add('editUserOpen');
 
     }
