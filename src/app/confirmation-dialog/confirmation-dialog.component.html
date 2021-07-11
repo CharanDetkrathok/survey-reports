@@ -1,19 +1,18 @@
 <div class="container-wrapper">
-    <div mat-dialog-title fxLayout="row" fxLayoutAlign="start center">
-        <img src="assets/imgs/ic-father.png" alt>
+    <div class="dialog-header">
+        <img src="assets/imgs/logo-for-survey-dialog.png" alt="">
         <h1>{{title}}</h1>
     </div>
-    <hr>
-    <div mat-dialog-content class="container-content">
+    <div class="container-content">
         <p>{{message}}</p>
         <p>{{description}}</p>
         <p>{{descriptionDetail}}</p>
+        <hr>
     </div>
 
-    <hr>
+    <div class="container-btn">
 
-    <div mat-dialog-content class="container-btn">
-        <div fxLayout="row" fxLayoutAlign="end center" class="container-btn">
+        <div class="container-btn">
 
             <button [disabled]="btnLeftDisable" (click)="onDismiss()" class="btn-cancel">
                 {{txtBtnLeft}}

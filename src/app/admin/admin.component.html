@@ -1,40 +1,44 @@
 <div class="bg">
 
-    <div class="nav-wrapper">
-        <nav class="nav-bar">
-            <div class="branding">
-                <img src="assets/imgs/logo-for-survey3.png" alt>
-            </div>
-            <div class="list-items">
-                <ul>
-                    <li>
-                        <p>charan@ru.ac.th</p>
-                    </li>
-                    <li>
-                        <button>
-                            <span>Logout</span>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-
-    <div class="welcom-management-wrapper">
-
-        <div class="welcom-management-content">
-            <img src="assets/imgs/user-setting.png">
-            <div class="welcom-management-content-h2">
-                <h2>ยินดีต้อนรับเข้าสู่</h2>
-                <h2>ระบบการจัดการผู้ใช้งาน</h2>
-                <p>วันเปิด-ปิดระบบ การตอบแบบสำรวจสำหรับนักศึกษา</p>
-                <p>
-                    เพิ่มข้อมูลผู้ใช้งาน แก้ไขข้อมูลผู้ใช้งาน และลบข้อมูลผู้ใช้งาน
-                </p>
-                <p>ขอขอบคุณภาพจาก https://unsplash.com/</p>
-            </div>
+    <div class="bg-header">
+        <div class="nav-wrapper">
+            <nav class="nav-bar">
+                <div class="branding">
+                    <img src="assets/imgs/logo-for-survey.png" alt>
+                </div>
+                <div class="list-items">
+                    <ul>
+                        <li>
+                            <p>charan@ru.ac.th</p>
+                        </li>
+                        <li>
+                            <button>
+                                <span>Logout</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
 
+        <div class="welcom-management-wrapper">
+
+            <div class="welcom-management-content">
+                <img src="assets/imgs/user-setting.png">
+                <div class="welcom-management-content-h2">
+                    <h2>ยินดีต้อนรับเข้าสู่</h2>
+                    <h2>ระบบการจัดการผู้ใช้งาน</h2>
+                    <p>
+                        วันเปิด-ปิดระบบ การตอบแบบสำรวจสำหรับนักศึกษา
+                    </p>
+                    <p>
+                        เพิ่มข้อมูลผู้ใช้งาน แก้ไขข้อมูลผู้ใช้งาน และลบข้อมูลผู้ใช้งาน
+                    </p>
+                    <!-- <p>ขอขอบคุณภาพจาก https://unsplash.com/</p> -->
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <div class="open-close-wrapper">
@@ -52,7 +56,7 @@
                             <!-- <label>วันที่เปิดระบบ</label> -->
                             <mat-form-field appearance="fill">
                                 <mat-label>วันที่เปิดระบบ</mat-label>
-                                <input matInput readonly [matDatepicker]="pickerDayOpen" name="day-open" formControlName="__day_open" (dateChange)="onChangeDayOpenAndClose()">
+                                <input matInput readonly [matDatepicker]="pickerDayOpen" id="__day_open" name="__day_open" formControlName="__day_open" (dateChange)="onChangeDayOpenAndClose()" class="day-open-and-close">
                                 <mat-datepicker-toggle matSuffix [for]="pickerDayOpen"></mat-datepicker-toggle>
                                 <mat-datepicker touchUi #pickerDayOpen></mat-datepicker>
                             </mat-form-field>
@@ -61,7 +65,7 @@
                             <!-- <label>วันที่ปิดระบบ</label> -->
                             <mat-form-field appearance="fill">
                                 <mat-label>วันที่ปิดระบบ</mat-label>
-                                <input matInput readonly [matDatepicker]="pickerDayClose" name="day-close" formControlName="__day_close" (dateChange)="onChangeDayOpenAndClose()">
+                                <input matInput readonly [matDatepicker]="pickerDayClose" id="__day_close" name="__day_close" formControlName="__day_close" (dateChange)="onChangeDayOpenAndClose()" class="day-open-and-close">
                                 <mat-datepicker-toggle matSuffix [for]="pickerDayClose"></mat-datepicker-toggle>
                                 <mat-datepicker touchUi #pickerDayClose></mat-datepicker>
                             </mat-form-field>
@@ -219,13 +223,11 @@
     </div>
 
     <div class="footer">
-        <img src="assets/imgs/logo-for-survey4.png" alt>
+        <img src="assets/imgs/logo-for-survey-footer.png" alt>
         <p>
             แบบสำรวจภาวะการมีงานทำของบัณฑิตระดับปริญญาตรี
         </p>
-        <p>
-            และระดับบัณฑิตศึกษา มหาวิทยาลัยรามคำแหง
-        </p>
+        <p>และระดับบัณฑิตศึกษา มหาวิทยาลัยรามคำแหง</p>
     </div>
 
 </div>

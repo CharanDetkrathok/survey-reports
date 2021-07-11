@@ -92,8 +92,6 @@ export class AdminComponent implements OnInit {
     // ------ เหลือทำ error handling ----------- 
     await this.userAndFaculty.getHttpUserAndFaculty().subscribe(res => {
 
-      console.log(res)
-
       // Object จัดเก็บข้อมูล ผู้ใช้
       this.__setUserData = res.USERS;
 
@@ -166,7 +164,6 @@ export class AdminComponent implements OnInit {
 
     });
 
-    console.log(this.__setUserDataForDisplayTable)
 
   }
 
@@ -283,7 +280,6 @@ export class AdminComponent implements OnInit {
 
         this.userAndFaculty.postHttpUpdateDayOpenAndClose(dayOpen, dayClose, username).subscribe(res => {
 
-          console.log(res)
 
           if (res.error_message_status == 1) {
 
@@ -365,7 +361,6 @@ export class AdminComponent implements OnInit {
 
     if (tempRuMailAutocomplete == '' || !event.target.value.includes(`@ru.ac.th`) || event.target.value.substr(-9) != `@ru.ac.th` || event.target.value == `@ru.ac.th`) {
 
-      console.log(`1`)
 
       inputTagRUmail.classList.remove('input-ru-email-correct');
       inputTagRUmail.classList.add('input-ru-email-wrong');
@@ -389,7 +384,6 @@ export class AdminComponent implements OnInit {
 
     } else {
 
-      console.log('2')
 
       inputTagRUmail.classList.add('input-ru-email-correct');
       inputTagRUmail.classList.remove('input-ru-email-wrong');
@@ -403,16 +397,10 @@ export class AdminComponent implements OnInit {
 
     if (event.target.value.includes(`@ru.ac.th`) && event.target.closest('form').querySelector('#selectDepartmentCode').value != '') {
 
-      console.log('3')
-
       event.target.closest('form').querySelector('#selectDepartmentCode').classList.remove('input-ru-email-wrong');
       event.target.closest('form').querySelector('#selectDepartmentCode').classList.add('input-ru-email-correct');
 
       event.target.closest('form').querySelector('button.btn-submit-save').disabled = false;
-
-    } else {
-
-      console.log('4')
 
     }
 

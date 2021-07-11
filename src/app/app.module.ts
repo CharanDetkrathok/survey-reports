@@ -39,7 +39,7 @@ export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
-    //// เปลี่ยนภาษา TH - EN
+    // เปลี่ยนภาษา TH - EN
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
