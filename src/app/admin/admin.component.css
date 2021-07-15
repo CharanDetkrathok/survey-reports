@@ -2,73 +2,6 @@ html {
     scroll-behavior: smooth !important;
 }
 
-.bg {
-    background-color: #fff;
-    height: 100%;
-    width: 100%;
-}
-
-
-/* ไม่มีการเปลี่ยนแปลง เหมือนกันกับ 960px */
-
-nav .list-items ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav .list-items ul li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    text-decoration: none;
-    margin-left: 0.5rem;
-}
-
-nav .list-items ul li p {
-    color: rgb(255, 255, 255);
-    ;
-    margin: 0;
-}
-
-nav .list-items ul li button {
-    border: 2px solid rgb(255, 166, 0);
-    background-color: rgba(255, 255, 255, 0);
-    color: rgb(255, 166, 0);
-    border-radius: 0.5rem;
-    -webkit-border-radius: 0.5rem;
-    -moz-border-radius: 0.5rem;
-    -ms-border-radius: 0.5rem;
-    -o-border-radius: 0.5rem;
-    font-size: 1rem;
-}
-
-nav .list-items ul li button:hover {
-    background-color: rgb(255, 166, 0);
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
-    color: rgb(255, 255, 255);
-    text-shadow: rgba(0, 0, 0, 0.5) 1px 2px 2px;
-    border-radius: 0.5rem;
-    -webkit-border-radius: 0.5rem;
-    -moz-border-radius: 0.5rem;
-    -ms-border-radius: 0.5rem;
-    -o-border-radius: 0.5rem;
-}
-
-hr {
-    color: rgb(165, 165, 165);
-    height: 0.5px;
-}
-
-.nav-wrapper nav {
-    width: 100%;
-}
-
 .welcom-management-content img {
     text-shadow: rgba(255, 255, 255, 0.945) 0px 3px 8px;
 }
@@ -81,47 +14,11 @@ hr {
 }
 
 @media screen and (max-width: 959px) and (orientation: portrait) {
-    .bg-header {
+    .bg-welcom {
         background-color: rgb(255, 255, 255);
         height: auto;
         width: 100%;
-    }
-    nav {
-        top: 0;
-        background-color: rgb(18, 2, 90);
-        box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
-        display: flex;
-    }
-    .nav-wrapper nav {
-        margin-bottom: 3rem;
-    }
-    .nav-bar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    nav .branding {
-        height: 100%;
-        width: 70%;
-        display: flex;
-    }
-    nav .branding img {
-        width: 100%;
-        height: 100%;
-        margin-top: 1.5rem;
-    }
-    nav .list-items {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.5rem 0 1.5rem 0;
-    }
-    nav .list-items ul li p {
-        font-size: 1rem;
-    }
-    nav .list-items ul li button {
-        padding: 0.5rem 1.2rem;
+        margin-top: 3rem;
     }
     .welcom-management-wrapper {
         display: flex;
@@ -803,76 +700,14 @@ hr {
         box-shadow: none;
     }
     /* จบ -> เมื่อ click ที่ปุ่มแก้ไข จะทำการเพิ่ม className ด้วย javascript  */
-    /* เริ่ม แก้ไขผู้ใช้งาน */
-    .footer {
-        /*👉background-image: url('../../assets/imgs/marek-piwnicki-l0fKjvNCymM-unsplash2.jpg');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-        background-size: cover;👈*/
-        height: auto;
-        width: 100%;
-        padding: 3rem 0.5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(18, 2, 90);
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.25) 0px -12px 30px, rgba(0, 0, 0, 0.25) 0px 4px 6px, rgba(0, 0, 0, 0.25) 0px 12px 13px, rgba(0, 0, 0, 0.25) 0px -3px 5px;
-    }
-    .footer img {
-        width: 15rem;
-        margin-bottom: 1rem;
-    }
-    .footer p {
-        /* font-size: 0.4rem; */
-        margin: 0;
-        color: #fff;
-    }
 }
 
 @media screen and (max-width: 959px) and (orientation: landscape) {
-    .bg-header {
+    .bg-welcom {
         background-color: rgb(255, 255, 255);
         height: auto;
         width: 100%;
-    }
-    nav {
-        top: 0;
-        background-color: rgb(18, 2, 90);
-        box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
-        display: flex;
-    }
-    .nav-wrapper nav {
-        margin-bottom: 10vh;
-    }
-    .nav-bar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    nav .branding {
-        height: 100%;
-        width: 50%;
-        display: flex;
-    }
-    nav .branding img {
-        width: 100%;
-        height: 100%;
-        margin-top: 1.5rem;
-    }
-    nav .list-items {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.5rem 0 1.5rem 0;
-    }
-    nav .list-items ul li p {
-        font-size: 1.2rem;
-    }
-    nav .list-items ul li button {
-        padding: 0.7rem 1.5rem;
+        margin-top: 10vh;
     }
     .welcom-management-wrapper {
         margin-bottom: 1rem;
@@ -1540,70 +1375,13 @@ hr {
         box-shadow: none;
     }
     /* จบ -> เมื่อ click ที่ปุ่มแก้ไข จะทำการเพิ่ม className ด้วย javascript  */
-    /* เริ่ม แก้ไขผู้ใช้งาน */
-    .footer {
-        /*👉 background-image: url('../../assets/imgs/marek-piwnicki-l0fKjvNCymM-unsplash2.jpg');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-        background-size: cover;👈*/
-        height: auto;
-        width: 100%;
-        padding: 3rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(18, 2, 90);
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.25) 0px -12px 30px, rgba(0, 0, 0, 0.25) 0px 4px 6px, rgba(0, 0, 0, 0.25) 0px 12px 13px, rgba(0, 0, 0, 0.25) 0px -3px 5px;
-    }
-    .footer img {
-        width: 35rem;
-        margin-bottom: 1rem;
-    }
-    .footer p {
-        font-size: 1.2rem;
-        margin: 0;
-        color: #fff;
-    }
 }
 
 @media screen and (min-width: 960px) and (orientation: portrait) {
-    .bg-header {
+    .bg-welcom {
         background-color: rgb(255, 255, 255);
         height: auto;
         width: 100%;
-    }
-    nav {
-        top: 0;
-        background-color: rgb(6, 0, 94);
-        height: 5.5rem;
-        box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
-        display: flex;
-    }
-    /*👉.nav-wrapper nav {
-        margin-bottom: 10rem;
-    }👈*/
-    nav .branding {
-        height: 100%;
-        width: 50%;
-        display: flex;
-    }
-    nav .branding img {
-        padding: 0.5rem;
-        margin-left: 1rem;
-        height: 100%;
-    }
-    nav .list-items {
-        height: 100%;
-        width: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        padding: 1.5rem;
-    }
-    nav .list-items ul li p {
-        font-size: 1.2rem;
     }
     .welcom-management-wrapper {
         margin: 10rem 0;
@@ -2274,65 +2052,14 @@ hr {
         box-shadow: none;
     }
     /* จบ -> เมื่อ click ที่ปุ่มแก้ไข จะทำการเพิ่ม className ด้วย javascript  */
-    /* เริ่ม แก้ไขผู้ใช้งาน */
-    .footer {
-        height: auto;
-        width: 100%;
-        padding: 5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(18, 2, 90);
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.25) 0px -12px 30px, rgba(0, 0, 0, 0.25) 0px 4px 6px, rgba(0, 0, 0, 0.25) 0px 12px 13px, rgba(0, 0, 0, 0.25) 0px -3px 5px;
-    }
-    .footer img {
-        width: 35rem;
-        margin-bottom: 1rem;
-    }
-    .footer p {
-        font-size: 1rem;
-        margin: 0;
-        color: #fff;
-    }
 }
 
 @media screen and (min-width: 960px) and (orientation: landscape) {
-    .bg-header {
+    .bg-welcom {
         background-color: rgb(255, 255, 255);
         height: 100vh;
         width: 100%;
-    }
-    nav {
-        top: 0;
-        background-color: rgb(6, 0, 94);
-        height: 5.5rem;
-        box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
-        display: flex;
-    }
-    .nav-wrapper nav {
-        margin-bottom: 23vh;
-    }
-    nav .branding {
-        height: 100%;
-        width: 50%;
-        display: flex;
-    }
-    nav .branding img {
-        padding: 0.5rem;
-        margin-left: 1rem;
-        height: 100%;
-    }
-    nav .list-items {
-        height: 100%;
-        width: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        padding: 1.5rem;
-    }
-    nav .list-items ul li p {
-        font-size: 1.2rem;
+        margin-top: 23vh;
     }
     .welcom-management-wrapper {
         height: 100vh;
@@ -3003,25 +2730,4 @@ hr {
         box-shadow: none;
     }
     /* จบ -> เมื่อ click ที่ปุ่มแก้ไข จะทำการเพิ่ม className ด้วย javascript  */
-    /* เริ่ม แก้ไขผู้ใช้งาน */
-    .footer {
-        height: auto;
-        width: 100%;
-        padding: 5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(18, 2, 90);
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.25) 0px -12px 30px, rgba(0, 0, 0, 0.25) 0px 4px 6px, rgba(0, 0, 0, 0.25) 0px 12px 13px, rgba(0, 0, 0, 0.25) 0px -3px 5px;
-    }
-    .footer img {
-        width: 35rem;
-        margin-bottom: 1rem;
-    }
-    .footer p {
-        font-size: 1rem;
-        margin: 0;
-        color: #fff;
-    }
 }

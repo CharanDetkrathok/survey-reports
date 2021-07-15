@@ -1,16 +1,17 @@
 import { Routes } from "@angular/router";
 import { LoginComponent } from "./login/login.component";
 import { AdminComponent } from './admin/admin.component';
+import { MainComponent } from "./main/main.component";
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/main',
     pathMatch: 'full'
   },
   {
-    path: 'login',
-    component: LoginComponent
+    path: 'main',
+    component: MainComponent
   },
   {
     path: 'admin',
@@ -18,7 +19,7 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/login',
+    redirectTo: '/main',
     pathMatch: 'full'
   }
 ];

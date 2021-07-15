@@ -16,6 +16,12 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { MainComponent } from './main/main.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignInStaffComponent } from './sign-in/sign-in-staff/sign-in-staff.component';
+import { SignInStudentComponent } from './sign-in/sign-in-student/sign-in-student.component';
 
 // เปลี่ยนภาษา TH - EN
 export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
@@ -27,7 +33,13 @@ export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
     AppComponent,
     LoginComponent,
     AdminComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    MainComponent,
+    HeaderComponent,
+    FooterComponent,
+    SignInComponent,
+    SignInStaffComponent,
+    SignInStudentComponent
   ],
   imports: [
     BrowserModule,

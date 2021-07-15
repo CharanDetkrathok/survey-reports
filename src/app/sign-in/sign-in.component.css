@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.slider {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(155deg, #fff 35%, #ffd350 95%);
+}
+
+.slides {
+    width: 300vw;
+    height: 100vh;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 100vw;
+    transition: 2s;
+}
+
+.staff {
+    /* code margin-left: -100vw; ด้านล่าง เป็นการกำหมดให้อยู่ "เลยจอ" ออกไป ทางซ้าย */
+    margin-left: -100vw;
+    /* code ด้านล่าง เป็นการทำงานทั่วไป */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcom {
+    /* code margin-left: 0; ด้านล่าง เป็นการกำหมดให้อยู่ "ด้านในจอ" พอดี ทางซ้าย */
+    margin-left: 0;
+    /* code ด้านล่าง เป็นการทำงานทั่วไป */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.student {
+    /* code margin-left: +100vw; ด้านล่าง เป็นการกำหมดให้อยู่ "เลยจอ" ออกไป ทางขวา */
+    margin-left: +100vw;
+    /* code ด้านล่าง เป็นการทำงานทั่วไป */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcom-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcom-text img {
+    width: 15rem;
+    height: 100%;
+    margin: 2rem 0 1rem 0;
+}
+
+.welcom-text h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1;
+    color: rgb(0 0 0);
+    text-shadow: rgb(129 129 129) 2px 2px 3px;
+}
+
+.welcom-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-in-staff-content {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sign-in-welcom-content {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sign-in-student-content {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.btn-go-to-staff {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    padding: 1rem 3rem;
+    border: 2px solid rgb(255, 101, 0);
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(255, 101, 0);
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+.btn-go-to-staff:hover {
+    background-color: rgb(255, 101, 0);
+    box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 3px;
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.5) 1px 2px 2px;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+
+.btn-go-to-student {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    padding: 1rem 3rem;
+    border: 2px solid rgb(10, 0, 155);
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(10, 0, 155);
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+.btn-go-to-student:hover {
+    background-color: rgb(10, 0, 155);
+    box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 3px;
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.5) 1px 2px 2px;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}

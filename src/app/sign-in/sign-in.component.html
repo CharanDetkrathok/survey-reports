@@ -1,0 +1,49 @@
+<!-- slide ยินดีต้อนรับ,เข้าสู่ระบบ สำหรับนักศึกษา,เข้าสู่ระบบ สำหรับ บุคลากร -->
+<div class="slider">
+    <div class="slides">
+
+        <div class="slide staff">
+            <div class="sign-in-staff-content">
+
+                <!-- * : นำส่วนการแสดงผลการ (sign-in-staff) เข้าสู่ระบบ สำหรับนักศึกษา เข้ามาแสดงผล -->
+                <app-sign-in-staff></app-sign-in-staff>
+                <button class="btn-go-to-welcom" (click)="onClickWelcomButton()">
+                    welcom
+                </button>
+            </div>
+        </div>
+        <div class="slide welcom">
+            <div class="sign-in-welcom-content">
+                <div class="welcom-text">
+                    <img src="assets/imgs/logo-for-survey-welcom-yellow.png">
+                    <h1>แบบสำรวจภาวะการมีงานทำ</h1>
+                    <h1>
+                        ของบัณฑิตระดับปริญญาตรี และระดับบัณฑิตศึกษา
+                    </h1>
+                    <h1>มหาวิทยาลัยรามคำแหง</h1>
+                </div>
+
+                <div class="welcom-btn">
+                    <button class="btn-go-to-staff" (click)="onClickStaffButton()">
+                        เข้าสู่ระบบ สำหรับนักศึกษา
+                    </button>
+                    <button class="btn-go-to-student" (click)="onClickStudentButton()">
+                        เข้าสู่ระบบ สำหรับบุคลากร
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <div class="slide student">
+            <div class="sign-in-student-content">
+
+                <!-- * : นำส่วนการแสดงผลการ (sign-in-student) เข้าสู่ระบบ สำหรับนักศึกษา เข้ามาแสดงผล -->
+                <app-sign-in-student></app-sign-in-student>
+                <button class="btn-go-to-welcom" (click)="onClickWelcomButton()">
+                    welcom
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
