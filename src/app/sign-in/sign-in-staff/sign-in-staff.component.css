@@ -1,0 +1,133 @@
+.sign-in-staff-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-in-staff-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sign-in-presentation {
+    /* height: 100%; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-in-presentation img {
+    width: 9%;
+    margin: 3rem 0 1rem 0;
+}
+
+.sign-in-presentation h1 {
+    font-size: 3vw;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.staff-form-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    margin: 0.3rem;
+}
+
+.input-ru-email,
+.input-password {
+    font-size: 2rem;
+    font-weight: 200;
+    padding: 0.5rem 2rem;
+    border: 1px solid rgb(165, 165, 165);
+    border-radius: 0.5rem;
+}
+
+.input-ru-email:hover,
+.input-password:hover {
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 4px;
+}
+
+.input-ru-email:focus,
+.input-password:focus {
+    box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 4px;
+    outline: none;
+}
+
+.button-and-checkbox {
+    width: 100%;
+    margin: 0.3rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.label-remember-staff {
+    font-size: 1.5rem;
+}
+
+.section-remember-staff input {
+    height: 2rem;
+    width: 2rem;
+    outline: none;
+}
+
+.section-remember-staff input:checked {
+    outline: none;
+}
+
+.section-remember-staff {
+    width: 100%;
+    margin: 0.3rem;
+}
+
+.section-btn-sign-in {
+    width: 100%;
+}
+
+.btn-sign-in {
+    width: 98%;
+    font-size: 1.5rem;
+    padding: 1.3rem;
+    margin: 0.3rem;
+    border: 1px solid rgb(10, 0, 155);
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(10, 0, 155);
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+.btn-sign-in:hover {
+    background-color: rgb(10, 0, 155);
+    box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 3px;
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.5) 1px 2px 2px;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}

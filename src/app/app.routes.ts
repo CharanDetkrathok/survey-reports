@@ -14,6 +14,10 @@ export const routes: Routes = [
     component: MainComponent
   },
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: 'admin',
     component: AdminComponent
   },

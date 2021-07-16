@@ -7,15 +7,18 @@
 
                 <!-- * : นำส่วนการแสดงผลการ (sign-in-staff) เข้าสู่ระบบ สำหรับนักศึกษา เข้ามาแสดงผล -->
                 <app-sign-in-staff></app-sign-in-staff>
-                <button class="btn-go-to-welcom" (click)="onClickWelcomButton()">
-                    welcom
-                </button>
+                <div class="go-to-welcom-right-content">
+                    <button class="btn-go-to-welcom-right" (click)="onClickWelcomButton()">
+                        <!-- <label class="label-back">Back</label> -->
+                        <img src="assets/imgs/right-arrow.png">
+                    </button>
+                </div>
             </div>
         </div>
         <div class="slide welcom">
             <div class="sign-in-welcom-content">
                 <div class="welcom-text">
-                    <img src="assets/imgs/logo-for-survey-welcom-yellow.png">
+                    <img src="assets/imgs/logo-for-survey-welcom-blue.png">
                     <h1>แบบสำรวจภาวะการมีงานทำ</h1>
                     <h1>
                         ของบัณฑิตระดับปริญญาตรี และระดับบัณฑิตศึกษา
@@ -24,10 +27,10 @@
                 </div>
 
                 <div class="welcom-btn">
-                    <button class="btn-go-to-staff" (click)="onClickStaffButton()">
+                    <button class="btn-go-to-student" (click)="onClickStudentButton()">
                         เข้าสู่ระบบ สำหรับนักศึกษา
                     </button>
-                    <button class="btn-go-to-student" (click)="onClickStudentButton()">
+                    <button class="btn-go-to-staff" (click)="onClickStaffButton()">
                         เข้าสู่ระบบ สำหรับบุคลากร
                     </button>
                 </div>
@@ -39,9 +42,13 @@
 
                 <!-- * : นำส่วนการแสดงผลการ (sign-in-student) เข้าสู่ระบบ สำหรับนักศึกษา เข้ามาแสดงผล -->
                 <app-sign-in-student></app-sign-in-student>
-                <button class="btn-go-to-welcom" (click)="onClickWelcomButton()">
-                    welcom
-                </button>
+                <div class="go-to-welcom-left-content">
+                    <button class="btn-go-to-welcom-left" (click)="onClickWelcomButton()">
+                        <img src="assets/imgs/left-arrow.png">
+                        <!-- <label class="label-back">Back</label> -->
+                    </button>
+                </div>
+
             </div>
         </div>
 
