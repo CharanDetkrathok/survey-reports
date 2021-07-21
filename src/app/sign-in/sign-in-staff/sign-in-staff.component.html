@@ -9,14 +9,14 @@
         </div>
 
         <div class="staff-form-content">
-            <form [formGroup]="">
+            <form [formGroup]="signInStaffFormGroup" (ngSubmit)="onStaffSingInSubmit()">
                 <section class="section-input-ru-email">
-                    <input id="ruMail" type="email" class="input-ru-email" placeholder=" " (keyup)="onKeyUpRuMail($event)">
+                    <input id="ruMail" type="email" class="input-ru-email" placeholder=" " (keyup)="onKeyUpRuMail($event)" formControlName="inputRUmail">
                     <label class="label-input-ru-email">RU-Mail</label>
                     <span class="error-message-ru-mail-hidden">กรุณากรอก ru-mail ให้ถูกต้อง</span>
                 </section>
                 <section class="section-input-password">
-                    <input id="password" type="password" class="input-password" placeholder=" " (keyup)="onKeyUpPassword($event)">
+                    <input id="password" type="password" class="input-password" placeholder=" " (keyup)="onKeyUpPassword($event)" formControlName="inputPassword">
                     <label class="label-input-password">Password</label>
                     <img src="assets/imgs/eye-password.png" class="img-password-eye-false" (click)="onOpenEye($event)">
                     <img src="assets/imgs/eye-password-hide.png" class="img-password-eye-hide-true" (click)="onHiddenEye($event)">
@@ -24,10 +24,10 @@
                 </section>
                 <div class="button-and-checkbox">
                     <section class="section-btn-sign-in">
-                        <button class="btn-sign-in">Sign in</button>
+                        <button class="btn-sign-in" disabled="true">Sign in</button>
                     </section>
                     <section class="section-remember-staff">
-                        <input type="checkbox" class="check-remember-staff">
+                        <input type="checkbox" class="check-remember-staff" formControlName="checkRememberMe" (click)="onCheckRememberMe($event)">
                         <label class="label-remember-staff">Remember me</label>
                     </section>
                 </div>

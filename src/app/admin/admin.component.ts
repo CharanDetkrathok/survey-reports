@@ -342,9 +342,9 @@ export class AdminComponent implements OnInit {
 
     let tempRuMailAutocomplete = event.target.value;
 
-    if (tempRuMailAutocomplete.substring(tempRuMailAutocomplete.length, tempRuMailAutocomplete.length - 2) == '@r') {
+    if (tempRuMailAutocomplete.substr(-1) == '@') {
 
-      event.target.value += `u.ac.th`;
+      event.target.value += `ru.ac.th`;
 
     }
 
@@ -414,9 +414,9 @@ export class AdminComponent implements OnInit {
 
     let tempRuMailAutocomplete = event.target.value;
 
-    if (tempRuMailAutocomplete.substring(tempRuMailAutocomplete.length, tempRuMailAutocomplete.length - 2) == '@r') {
+    if (tempRuMailAutocomplete.substr(-1) == '@') {
 
-      event.target.value += `u.ac.th`;
+      event.target.value += `ru.ac.th`;
 
     }
 

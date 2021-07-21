@@ -50,7 +50,7 @@ html {
         font-size: 1.6rem;
         line-height: 1rem;
         color: rgb(46, 46, 46);
-        text-shadow: rgb(151 151 151) 0px 3px 8px;
+        text-shadow: rgb(151 151 151) 2px 2px 2px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -61,7 +61,7 @@ html {
         font-size: 0.8rem;
         line-height: 0.5rem;
         color: rgb(0 16 204);
-        text-shadow: rgb(174 174 174) 0px 3px 8px;
+        text-shadow: rgb(174 174 174) 2px 2px 2px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -729,13 +729,13 @@ html {
         font-size: 6.5vw !important;
         line-height: 6vw !important;
         color: rgb(46, 46, 46);
-        text-shadow: rgb(151 151 151) 0px 3px 8px;
+        text-shadow: rgb(151 151 151) 2px 2px 2px;
     }
     .welcom-management-content-h2 p {
         font-size: 2vw;
         line-height: 1.5vw;
         color: rgb(0 16 204);
-        text-shadow: rgb(174 174 174) 0px 3px 8px;
+        text-shadow: rgb(174 174 174) 2px 2px 2px;
     }
     /* เริ่ม วันเปิด-ปิดระบบ */
     form#dayOpenAndCloseForm {
@@ -1400,13 +1400,13 @@ html {
         font-size: 5vw !important;
         line-height: 5vw !important;
         color: rgb(46, 46, 46);
-        text-shadow: rgb(151 151 151) 0px 3px 8px;
+        text-shadow: rgb(151 151 151) 2px 2px 2px;
     }
     .welcom-management-content-h2 p {
         font-size: 1.5vw;
         line-height: 1.5vw;
         color: rgb(0 16 204);
-        text-shadow: rgb(174 174 174) 0px 3px 8px;
+        text-shadow: rgb(174 174 174) 2px 2px 2px;
     }
     /* เริ่ม วันเปิด-ปิดระบบ */
     form#dayOpenAndCloseForm {
@@ -2078,13 +2078,13 @@ html {
         font-size: 5vw !important;
         line-height: 5vw !important;
         color: rgb(46, 46, 46);
-        text-shadow: rgb(151 151 151) 0px 3px 8px;
+        text-shadow: rgb(151 151 151) 2px 2px 2px;
     }
     .welcom-management-content-h2 p {
         font-size: 1.5vw;
         line-height: 1.5vw;
         color: rgb(0 16 204);
-        text-shadow: rgb(174 174 174) 0px 3px 8px;
+        text-shadow: rgb(174 174 174) 2px 2px 2px;
     }
     /* เริ่ม วันเปิด-ปิดระบบ */
     form#dayOpenAndCloseForm {
