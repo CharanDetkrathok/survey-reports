@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  _base_url: `http://sevkn.ru.ac.th/survey-api/`
+  _base_url: `http://localhost:80/survey-api/`
 };
